@@ -198,7 +198,6 @@ MonoBehaviour:
   sprintJump: 75
   jumping: 0
   colliding: 0
-  camera: {fileID: 1083142198}
   cam: {fileID: 1083142203}
 --- !u!1 &163666187
 GameObject:
@@ -1224,7 +1223,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400020, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
   m_PrefabInternal: {fileID: 627786954}
   m_GameObject: {fileID: 1067226954}
-  m_LocalRotation: {x: -.333181769, y: .90969795, z: -.106434524, w: -.223855138}
+  m_LocalRotation: {x: -.333181798, y: .909698069, z: -.106434539, w: -.223855168}
   m_LocalPosition: {x: .101299509, y: .0375674255, z: -.0632802248}
   m_LocalScale: {x: 1, y: .99999994, z: 1}
   m_Children:
@@ -1245,7 +1244,7 @@ GameObject:
   - 81: {fileID: 1083142200}
   - 114: {fileID: 1083142204}
   m_Layer: 0
-  m_Name: Camera
+  m_Name: MainCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

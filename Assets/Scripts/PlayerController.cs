@@ -18,17 +18,11 @@ public class PlayerController : MonoBehaviour {
 	public bool colliding = false;
 
 
-
-
-	int floorMask;
-	float camRayLenght = 100f;
-
-
 	private Animator animPlayer;
 
 
-	public GameObject camera;
-	Vector3 cameraOriginalRotation;
+	//public GameObject camera;
+	//Vector3 cameraOriginalRotation;
 
 	public Camera cam;
 
@@ -39,7 +33,7 @@ public class PlayerController : MonoBehaviour {
 		animPlayer = GetComponent <Animator> ();
 		speed = walkSpeed;
 		jump = normalJump;
-		cameraOriginalRotation = camera.transform.rotation.eulerAngles;
+		//cameraOriginalRotation = camera.transform.rotation.eulerAngles;
 	}
 
 
@@ -73,10 +67,36 @@ public class PlayerController : MonoBehaviour {
 
 
 	}
+	
+		
+	void Move(float horizontal, float vertical)
+	{
+		
+		if (horizontal != 0.0f || vertical != 0.0f) {
+			//Vector3 v1 = (vertical*Vector3.forward.normalized + horizontal*Vector3.right.normalized).normalized;
+			
+			Vector3 f = cam.transform.forward;
+			f.y = 0.0f;
+			
+			Vector3 r = cam.transform.right;
+			r.y = 0.0f;
+			
+			Vector3 v = (vertical*f.normalized + horizontal*r.normalized).normalized;
+			
+			animPlayer.SetFloat("speed", speed);
+			
+			transform.position += v * Time.deltaTime * speed;
+			Quaternion q = Quaternion.LookRotation(v);
+			rigidbody.transform.rotation = q;
+			
+		}
+		
+		else 	animPlayer.SetFloat("speed", 0.0f);
+	}
 
-
-
-
+	/* 
+	 * El que teniem abans
+	 * 
 	void Move(float horizontal, float vertical)
 	{
 
@@ -94,27 +114,7 @@ public class PlayerController : MonoBehaviour {
 			rot += camera.transform.forward * vertical;
 
 			
-			/*if(Input.GetKey(KeyCode.A))
-			{
-				mov += new Vector3(-1.0f, 0.0f, 0.0f);
-				rot += -camera.transform.right;
-			}
-			else if(Input.GetKey(KeyCode.D))
-			{
-				mov += new Vector3(1.0f, 0.0f, 0.0f);
-				rot += camera.transform.right;
-			}
-			
-			if(Input.GetKey(KeyCode.S))
-			{
-				mov += new Vector3(0.0f, 0.0f, -1.0f);
-				rot += -camera.transform.forward;
-			}
-			else if(Input.GetKey(KeyCode.W))
-			{
-				mov += new Vector3(0.0f, 0.0f, 1.0f);
-				rot += camera.transform.forward;
-			}*/
+		
 			
 			mov *= speed*Time.fixedDeltaTime;
 			
@@ -128,77 +128,8 @@ public class PlayerController : MonoBehaviour {
 
 		}
 		else 	animPlayer.SetFloat("speed", 0.0f);
-
-		//if (horizontal != 0.0f || vertical != 0.0f) {
-
-
-
-
-
-
-			/*
-			
-			//transform.position += v * Time.deltaTime;
-			//transform.rotation = Quaternion.SetLookRotation(v);
-
-			Vector3 f = cam.transform.forward;
-			f.z = 0.0f;
-			Vector3 r = cam.transform.right;
-			r.z = 0;
-			Vector3 v = (vertical*f.normalized + horizontal*r.normalized).normalized;
-
-
-			animPlayer.SetFloat("speed", speed);
-			//Vector3 v1 = (vertical*Vector3.forward.normalized + horizontal*Vector3.right.normalized).normalized;
-			
-			
-			
-			
-			transform.position += v * Time.deltaTime * speed;
-			Quaternion q = Quaternion.LookRotation(v);
-			rigidbody.transform.rotation = q;
-
-
-			/*Quaternion hRot = Quaternion.Euler(0.0f, 90.0f * horizontal, 0.0f);
-
-			float verticalRotation = 0.0f;
-			if(vertical == 1) verticalRotation = 0.0f;
-			else verticalRotation = 180.0f;
-
-			Quaternion vRot = Quaternion.Euler (0.0f,verticalRotation, 0.0f);
-
-			Vector3 v, h;
-			v = new Vector3(0.0f,verticalRotation, 0.0f);
-			h = new Vector3(0.0f, 90.0f * horizontal, 0.0f);
-
-			Quaternion rot = Quaternion.Euler(v + h);
-
-			//rigidbody.transform.rotation = rot;
-			rigidbody.transform.LookAt(transform.position + (v+h));
-			//rigidbody.transform.rotation = vRot;
-
-			rigidbody.transform.Translate(Vector3.forward.normalized * speed * Time.deltaTime);
-
-
-			/*
-			Vector3 movement = new Vector3();
-			if(vertical < 0.
-				speed /= 2;
-			movement.Set (0.0f, 0.0f, vertical);
-			movement = movement.normalized * speed * Time.deltaTime;
-			rigidbody.transform.Translate (movement);*/
-
-
-
-			
-
-
-			//rigidbody.transform.Rotate (0.0f, horizontal * 1.5f, 0.0f);
-		//}
-		//else 	animPlayer.SetFloat("speed", 0.0f);
 	}
-
-
+*/
 
 
 
