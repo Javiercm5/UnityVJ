@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour {
 	public float walkSpeed = 0.4f;
 	public float sprintSpeed = 1.0f;
 
-	public float normalJump = 65.0f;
-	public float sprintJump = 75.0f;
+	public float normalJump = 2.0f;
+	public float sprintJump = 3.0f;
 
 	private float speed;
 	private float jump;
@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour {
 			animPlayer.SetFloat("speed", speed);
 			
 			transform.position += v * Time.deltaTime * speed;
+
 			Quaternion q = Quaternion.LookRotation(v);
 			rigidbody.transform.rotation = q;
 			
@@ -141,8 +142,12 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3();
 
 		animPlayer.SetBool("isJumping", true);
-		movement.Set (0.0f, jump * Time.deltaTime, 0.0f);
-		rigidbody.AddForce (new Vector3(0.0f, jump, 0.0f));
+		//movement.Set (0.0f, jump * Time.deltaTime, 0.0f);
+		//rigidbody.AddForce (new Vector3(0.0f, jump, 0.0f));
+		Vector3 velJump = rigidbody.velocity;
+		velJump.y = jump;
+		rigidbody.velocity = velJump;
+
 	}
 
 	void Attack()
@@ -152,11 +157,14 @@ public class PlayerController : MonoBehaviour {
 		if(attacking) speed = 0.01f;
 	}
 	
-	void OnCollisionEnter(Collision hit)
+
+
+
+	void OnCollisionStay(Collision col)
 	{
-		//if(hit.collider.tag == "Floor")	
-			colliding = true;
-			animPlayer.SetBool("isJumping", false);
+		colliding = true;
+		animPlayer.SetBool("isJumping", false);
+
 	}
 
 	void OnCollisionExit(Collision hit)
