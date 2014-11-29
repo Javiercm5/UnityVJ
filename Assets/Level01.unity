@@ -874,6 +874,22 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -.333181769
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: .90969795
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -.106434524
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -.223855138
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11100000, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
     - {fileID: 11400000, guid: a0179be775d865349b2c4bbbd6f83177, type: 2}
