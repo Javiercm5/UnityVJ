@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 
 	public bool jumping = false;
 	public bool colliding = false;
-
+	public bool attacking = false;
 
 	private Animator animPlayer;
 
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour {
 
 	void Attack()
 	{
-		bool attacking = Input.GetKey (KeyCode.Mouse0);
+		attacking = Input.GetKey (KeyCode.Mouse0);
 		animPlayer.SetBool("isAttacking", attacking);
 		if(attacking) speed = 0.01f;
 	}
