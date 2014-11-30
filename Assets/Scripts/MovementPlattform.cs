@@ -7,16 +7,16 @@ public class MovementPlattform : MonoBehaviour {
 	public float speed = 5;
 
 	private float dist;
-	private int  direction = -1;
+	private int  direction = 1;
 	private float currDist = 0.0f;
 
-	// Use this for initialization
+
 	void Start () {
 		dist = limit.magnitude;
 		limit.Normalize();
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 		rigidbody.velocity = direction*limit*speed;
 		currDist += speed*Time.deltaTime;

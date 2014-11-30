@@ -13,9 +13,7 @@ public class GameManagement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (player.transform.position.y <= -2.0f) {
-			Application.LoadLevel(Application.loadedLevel);		
-		}
+
 	}
 	
 }
