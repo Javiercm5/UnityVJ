@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
 		animPlayer = GetComponent<Animator>();
 	}
 	
-	void FixedUpdate()
+	void Update()
 	{
 		if(Input.GetKey(KeyCode.LeftShift))
 		{
@@ -93,14 +93,15 @@ public class PlayerController : MonoBehaviour
 	{
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
+			++actualJumpCount;
 			Vector3 velJump = rigidbody.velocity;
-			velJump.y = jump;
+			velJump.y = actualJumpCount*jump;
 			rigidbody.velocity = velJump;
 
 			jumping = true;
 			animPlayer.SetBool("isJumping", jumping);
 			
-			++actualJumpCount;
+
 		}
 	}
 
@@ -111,13 +112,14 @@ public class PlayerController : MonoBehaviour
 		if(attacking) speed = 0.01f;
 	}
 
-	void OnCollisionStay(Collision col)
+	void OnCollisionEnter(Collision col)
 	{
 		colliding = true;
 		jumping = false;
 		animPlayer.SetBool("isJumping", jumping);
 
 		actualJumpCount = 0;
+		Debug.Log ("Jump ended: "+col.collider.gameObject.name);
 
 	}
 
