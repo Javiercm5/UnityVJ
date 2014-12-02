@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Update () 
 	{
-		if (transform.position.y <= -2.0f) Die();
+		if (transform.position.y <= -2.0f) Die(); //Game management
 		
 		if(damaged){
 			playerRender.material.color = new Color(0.5f, 0.0f, 0.0f, 0.1f);
