@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerHealth : MonoBehaviour {
 
 	public int startHealth = 100;
 	public int actualHealth;
-
+	public Slider healthSlider;
 
 	private bool isDead = false;
 	private bool damaged = false;
@@ -38,6 +39,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 
 		damaged = false;
+		healthSlider.value = actualHealth;
 	}
 
 
