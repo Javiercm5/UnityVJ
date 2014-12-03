@@ -22,17 +22,26 @@ public class PlayerController : MonoBehaviour
 	private Animator animPlayer;
 	public Camera cam;
 
+	Vector3 inc;
+	Vector3 pos;
+
 	void Awake()
 	{
 		speed = walkSpeed;
 		jump = normalJump;
 
 		animPlayer = GetComponent<Animator>();
+
+		inc = Vector3.zero;
+		pos = transform.position;
 	}
 	
 	void Update()
 	{
-		if(Input.GetKey(KeyCode.LeftShift))
+		inc = transform.position - pos;
+		cam.transform.position += inc;
+
+		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
 		{
 			speed = sprintSpeed;
 			jump = sprintJump;
@@ -42,6 +51,8 @@ public class PlayerController : MonoBehaviour
 			speed = walkSpeed;
 			jump = normalJump;
 		}
+
+		pos = transform.position;
 
 		if(canMove()) Move();
 		if(canJump()) Jump();
@@ -70,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
 	void Move()
 	{
-		float horizontal = Input.GetAxisRaw ("Horizontal");
+		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 
 		if(horizontal != 0.0f || vertical != 0.0f)
@@ -80,8 +91,8 @@ public class PlayerController : MonoBehaviour
 			Vector3 v = (vertical*f.normalized + horizontal*r.normalized).normalized;
 			
 			animPlayer.SetFloat("speed", speed);
-			
-			transform.position += v*Time.fixedDeltaTime*speed;
+
+			transform.position += v*Time.deltaTime*speed;
 
 			Quaternion q = Quaternion.LookRotation(v);
 			if(colliding) rigidbody.transform.rotation = q;	//Avoid errors with ropes
@@ -94,20 +105,19 @@ public class PlayerController : MonoBehaviour
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			++actualJumpCount;
+
 			Vector3 velJump = rigidbody.velocity;
 			velJump.y = actualJumpCount*jump;
 			rigidbody.velocity = velJump;
 
 			jumping = true;
 			animPlayer.SetBool("isJumping", jumping);
-			
-
 		}
 	}
 
 	void Attack()
 	{
-		attacking = Input.GetKey (KeyCode.Mouse0);
+		attacking = Input.GetKey(KeyCode.Mouse0);
 		animPlayer.SetBool("isAttacking", attacking);
 		if(attacking) speed = 0.01f;
 	}
@@ -119,8 +129,6 @@ public class PlayerController : MonoBehaviour
 		animPlayer.SetBool("isJumping", jumping);
 
 		actualJumpCount = 0;
-		Debug.Log ("Jump ended: "+col.collider.gameObject.name);
-
 	}
 
 	void OnCollisionExit(Collision col)
