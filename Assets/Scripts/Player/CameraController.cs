@@ -15,5 +15,6 @@ public class CameraController : MonoBehaviour
 	{
 		Screen.lockCursor = true;
 		gameObject.transform.RotateAround(mainObject.transform.position, Vector3.up, Input.GetAxis("Mouse X")*rotateSpeed*Time.deltaTime);
+		//gameObject.transform.RotateAround(mainObject.transform.position, -Vector3.right, Input.GetAxis("Mouse Y")*rotateSpeed*Time.deltaTime);
 	}
 }

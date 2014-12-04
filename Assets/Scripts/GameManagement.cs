@@ -11,8 +11,7 @@ public class GameManagement : MonoBehaviour
 
 	void Awake()
 	{
-		paused = false;
-		pauseMenu.SetActive(false);
+		unPauseGame();
 	}
 
 
@@ -47,7 +46,10 @@ public class GameManagement : MonoBehaviour
 
 	}
 
-
+	public void exitMenu()
+	{
+		Application.LoadLevel(0);
+	}
 
 	public void exitGame()
 	{

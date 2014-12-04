@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
 		return colliding;
 	}
 	
-	void incrementJumpCount(int inc = 1)
+	public void incrementJumpCount(int inc = 1)
 	{
 		maxJumpCount += inc;
 	}
@@ -84,6 +84,8 @@ public class PlayerController : MonoBehaviour
 		float horizontal = Input.GetAxisRaw("Horizontal");
 		float vertical = Input.GetAxisRaw("Vertical");
 
+		float y = rigidbody.velocity.y;
+
 		if(horizontal != 0.0f || vertical != 0.0f)
 		{
 			Vector3 f = cam.transform.forward; f.y = 0.0f;
@@ -92,7 +94,8 @@ public class PlayerController : MonoBehaviour
 			
 			animPlayer.SetFloat("speed", speed);
 
-			transform.position += v*Time.deltaTime*speed;
+			Vector3 tmp = v*speed; tmp.y = y;
+			rigidbody.velocity = tmp;
 
 			Quaternion q = Quaternion.LookRotation(v);
 			if(colliding) rigidbody.transform.rotation = q;	//Avoid errors with ropes
@@ -129,6 +132,13 @@ public class PlayerController : MonoBehaviour
 		animPlayer.SetBool("isJumping", jumping);
 
 		actualJumpCount = 0;
+	}
+
+	void OnCollisionStay(Collision col)
+	{
+		colliding = true;
+		jumping = false;
+		animPlayer.SetBool("isJumping", jumping);
 	}
 
 	void OnCollisionExit(Collision col)
