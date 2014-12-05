@@ -406,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: .400000006
   sprintSpeed: 1
-  normalJump: 2
+  normalJump: 2.5
   sprintJump: 3
   jumping: 0
   colliding: 0
@@ -1147,7 +1147,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &392580104
 Renderer:
   m_ObjectHideFlags: 0
@@ -1194,7 +1194,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 392580103}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .519999981, y: .257999986, z: .5}
+  m_LocalPosition: {x: .5, y: .200000003, z: .5}
   m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1210,7 +1210,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -3333,6 +3333,10 @@ Prefab:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400006, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+    - target: {fileID: 100016, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ba535c70bbcf7b46b0cba1188faae47, type: 3}
   m_RootGameObject: {fileID: 1917493585}
@@ -5896,7 +5900,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 1
-  m_BaseOffset: 0
+  m_BaseOffset: -.200000003
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!54 &1917493591

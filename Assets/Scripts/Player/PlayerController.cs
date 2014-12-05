@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 	public float walkSpeed = 0.4f;
 	public float sprintSpeed = 1.0f;
 
-	public float normalJump = 2.0f;
+	public float normalJump = 2.5f;
 	public float sprintJump = 3.0f;
 
 	private float speed;
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 			++actualJumpCount;
 
 			Vector3 velJump = rigidbody.velocity;
-			velJump.y = actualJumpCount*jump;
+			velJump.y = jump;
 			rigidbody.velocity = velJump;
 
 			jumping = true;
