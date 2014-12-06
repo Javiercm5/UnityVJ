@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int startHealth = 100;
 	public int actualHealth;
 	public Slider healthSlider;
+	public ParticleSystem blood;
 
 	private bool isDead = false;
 	private bool damaged = false;
@@ -36,6 +37,7 @@ public class PlayerHealth : MonoBehaviour {
 		if (isDead) {
 			transform.localScale -= new Vector3(0.5f, 0.5f, 0.5f) * Time.deltaTime;
 			if(transform.localScale.x < 0.1) Application.LoadLevel(Application.loadedLevel);	
+			blood.Play();
 		}
 
 		damaged = false;
@@ -47,6 +49,7 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		damaged = true;
 		actualHealth -= amountDamage;
+		blood.Play();
 		if(actualHealth <= 0 && !isDead) Die ();
 	}
 

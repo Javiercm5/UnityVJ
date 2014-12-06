@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
 	public bool attacking = false;
 
 	public int maxJumpCount = 1;
+	public ParticleSystem jumpParticles;
 	int actualJumpCount = 0;
 
 	private Animator animPlayer;
@@ -115,6 +116,7 @@ public class PlayerController : MonoBehaviour
 
 			jumping = true;
 			animPlayer.SetBool("isJumping", jumping);
+			jumpParticles.Play();
 		}
 	}
 
