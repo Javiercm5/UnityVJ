@@ -8587,6 +8587,10 @@ Prefab:
       propertyPath: healthSlider
       value: 
       objectReference: {fileID: 893505828}
+    - target: {fileID: 19800008, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: .109999999
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
   m_RootGameObject: {fileID: 148919591}
@@ -11224,7 +11228,7 @@ ParticleSystem:
         rgba: 3394136965
       minMaxState: 0
     startSize:
-      scalar: .100000001
+      scalar: .109999999
       maxCurve:
         serializedVersion: 2
         m_Curve:
