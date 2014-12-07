@@ -7,13 +7,20 @@ public class PlayerAttack : MonoBehaviour {
 
 	private int attackDelay = 0;
 
+	public AudioClip attackSound;
+	private AudioSource source;
 
-	void Start () {
-	
+	void Awake () {
+		source = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
 		if(attackDelay > 0) --attackDelay;
+		if(attackDelay <= 0 && GetComponentInParent<PlayerController>().attacking){
+			source.PlayOneShot(attackSound, 1.0f);
+			attackDelay = 50;
+
+		}
 	}
 
 
@@ -28,4 +35,6 @@ public class PlayerAttack : MonoBehaviour {
 			attackDelay = 50;
 		}
 	}
+
+
 }

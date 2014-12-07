@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
 
 	public int maxJumpCount = 1;
 	public ParticleSystem jumpParticles;
+	public ParticleSystem powerUpParticles;
 	int actualJumpCount = 0;
 
 	private Animator animPlayer;
@@ -25,6 +26,16 @@ public class PlayerController : MonoBehaviour
 
 	Vector3 inc;
 	Vector3 pos;
+
+
+	public AudioClip runSound;
+	public AudioClip jumpSound;
+	public AudioClip powerSound;
+	public AudioClip footSteps;
+
+
+
+	private AudioSource playerSource, bonusSource, walkSource;
 
 	void Awake()
 	{
@@ -35,6 +46,14 @@ public class PlayerController : MonoBehaviour
 
 		inc = Vector3.zero;
 		pos = transform.position;
+		AudioSource[] sources = GetComponents<AudioSource>();
+		playerSource = sources[0]; 
+		bonusSource = sources[1];
+		walkSource = sources[2];
+		walkSource.loop = true;
+
+
+	
 	}
 	
 	void Update()
@@ -46,11 +65,14 @@ public class PlayerController : MonoBehaviour
 		{
 			speed = sprintSpeed;
 			jump = sprintJump;
+
 		}
 		else
 		{
 			speed = walkSpeed;
 			jump = normalJump;
+
+
 		}
 
 		pos = transform.position;
@@ -78,6 +100,8 @@ public class PlayerController : MonoBehaviour
 	public void incrementJumpCount(int inc = 1)
 	{
 		maxJumpCount += inc;
+		powerUpParticles.Play();
+		bonusSource.PlayOneShot(powerSound, 5.0f);
 	}
 
 	void Move()
@@ -100,8 +124,18 @@ public class PlayerController : MonoBehaviour
 
 			Quaternion q = Quaternion.LookRotation(v);
 			if(colliding) rigidbody.transform.rotation = q;	//Avoid errors with ropes
+
+			if(speed == sprintSpeed && colliding){ 
+				walkSource.clip = runSound;
+				walkSource.volume = 1.0f;
+				walkSource.enabled = true;
+			}
+			else walkSource.enabled = false;
 		}
-		else animPlayer.SetFloat("speed", 0.0f);
+		else{ 
+			animPlayer.SetFloat("speed", 0.0f);
+			walkSource.enabled = false;
+		}
 	}
 
 	void Jump()
@@ -117,6 +151,7 @@ public class PlayerController : MonoBehaviour
 			jumping = true;
 			animPlayer.SetBool("isJumping", jumping);
 			jumpParticles.Play();
+			playerSource.PlayOneShot (jumpSound, 1.0f);
 		}
 	}
 
@@ -125,6 +160,7 @@ public class PlayerController : MonoBehaviour
 		attacking = Input.GetKey(KeyCode.Mouse0);
 		animPlayer.SetBool("isAttacking", attacking);
 		if(attacking) speed = 0.01f;
+		//if(attacking)source.PlayOneShot(attackSound, 1.0f);
 	}
 
 	void OnCollisionEnter(Collision col)
@@ -147,4 +183,5 @@ public class PlayerController : MonoBehaviour
 	{
 		colliding = false;
 	}
+
 }
