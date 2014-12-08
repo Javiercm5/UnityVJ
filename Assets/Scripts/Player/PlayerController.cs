@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
 	public AudioClip powerSound;
 	public AudioClip footSteps;
 
+	private bool key = false;
 
 
 	private AudioSource playerSource, bonusSource, walkSource;
@@ -163,6 +164,16 @@ public class PlayerController : MonoBehaviour
 		//if(attacking)source.PlayOneShot(attackSound, 1.0f);
 	}
 
+	public void setKey()
+	{
+		key = true;
+	}
+
+	public bool hasKey()
+	{
+		return key;
+	}
+
 	void OnCollisionEnter(Collision col)
 	{
 		colliding = true;
@@ -177,6 +188,8 @@ public class PlayerController : MonoBehaviour
 		colliding = true;
 		jumping = false;
 		animPlayer.SetBool("isJumping", jumping);
+
+
 	}
 
 	void OnCollisionExit(Collision col)

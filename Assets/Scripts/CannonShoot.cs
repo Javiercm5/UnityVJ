@@ -21,7 +21,7 @@ public class CannonShoot : MonoBehaviour {
 			cont = 0;
 
 			Rigidbody bullet = (Rigidbody) Instantiate(projectile, transform.position, transform.rotation);
-			Destroy (bullet.gameObject, 10);
+			Destroy (bullet.gameObject, 6);
 
 			bullet.velocity = transform.up * bulletSpeed;
 			Physics.IgnoreCollision (bullet.collider, gameObject.collider);
