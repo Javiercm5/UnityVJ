@@ -158,10 +158,9 @@ public class PlayerController : MonoBehaviour
 
 	void Attack()
 	{
-		attacking = Input.GetKey(KeyCode.Mouse0);
+		attacking = Input.GetKeyDown(KeyCode.Mouse0);
 		animPlayer.SetBool("isAttacking", attacking);
 		if(attacking) speed = 0.01f;
-		//if(attacking)source.PlayOneShot(attackSound, 1.0f);
 	}
 
 	public void setKey()

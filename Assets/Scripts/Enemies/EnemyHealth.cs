@@ -5,9 +5,12 @@ public class EnemyHealth : MonoBehaviour {
 
 	public int maxHealth = 5;
 
+	public ParticleSystem bloodParticles;
+
 	private int health;
 	private bool damaged = false;
 	private bool isDead = false;
+
 
 
 	void Start () {
@@ -17,19 +20,38 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Update () {
 
+
 	}
 
 
 	public void TakeDamage(int amountDamage)
 	{
-		damaged = true;
-		health -= amountDamage;
-		if(health <= 0 && !isDead) Die ();
-	}
+		if(!isDead){
+			damaged = true;
+			health -= amountDamage;
+			bloodParticles.Play();
+			if(health <= 0) Die ();
+		}
 
+	}
 
 	void Die()
 	{
-		Destroy(gameObject);
+		isDead = true;
+	}
+
+	public bool dead()
+	{
+		return isDead;
+	}
+
+	public bool isDamaged()
+	{
+		return damaged;
+	}
+
+	public void setDamaged(bool d)
+	{
+		damaged = d;
 	}
 }

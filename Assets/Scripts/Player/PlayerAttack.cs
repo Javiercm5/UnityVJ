@@ -3,37 +3,40 @@ using System.Collections;
 
 public class PlayerAttack : MonoBehaviour {
 
-	public int damage = 1;
+	public int damage = 2;
 
 	private int attackDelay = 0;
+	private bool impact = false;
 
 	public AudioClip attackSound;
 	private AudioSource source;
-
+	private EnemyHealth eh;
 	void Awake () {
 		source = GetComponent<AudioSource>();
 	}
 	
 	void Update () {
-		if(attackDelay > 0) --attackDelay;
-		if(attackDelay <= 0 && GetComponentInParent<PlayerController>().attacking){
-			source.PlayOneShot(attackSound, 1.0f);
+		bool attack = GetComponentInParent<PlayerController>().attacking && attackDelay <= 0;
+		if(attack){
+			if(impact){
+				if(eh != null)eh.TakeDamage(damage);
+			}
 			attackDelay = 50;
-
+			source.PlayOneShot(attackSound, 1.0f);
 		}
+
+		if(attackDelay > 0) --attackDelay;
 	}
 
 
 	void OnTriggerStay(Collider  hit)
 	{
-		if(hit.gameObject.tag == "Enemy" && GetComponentInParent<PlayerController>().attacking 
-		   && attackDelay <= 0){
-
-
-			EnemyHealth eh = hit.gameObject.GetComponent<EnemyHealth>();
-			eh.TakeDamage(damage);
-			attackDelay = 50;
-		}
+			impact = hit.gameObject.tag == "Enemy";
+			if(impact) eh = hit.gameObject.GetComponent<EnemyHealth>();
+	}
+	void OnTriggerExit(Collider  hit)
+	{
+		if(hit.gameObject.tag == "Enemy") impact = false;
 	}
 
 

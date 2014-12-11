@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerHealth : MonoBehaviour {
 
 	public int startHealth = 100;
-	public int actualHealth;
+	private int actualHealth;
 	public Slider healthSlider;
 	public ParticleSystem bloodParticles;
 	public ParticleSystem dieParticles;
@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour {
 	public AudioClip healSound;
 
 
-	private bool isDead = false;
+	public bool isDead = false;
 	private bool damaged = false;
 	private Color mainPlayerColor = new Color(0.5f,0.5f,0.5f,1.0f);
 	private Renderer playerRender;
