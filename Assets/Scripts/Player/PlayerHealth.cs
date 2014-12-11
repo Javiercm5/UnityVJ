@@ -54,7 +54,7 @@ public class PlayerHealth : MonoBehaviour {
 	}
 
 
-	void Die()
+	public void Die()
 	{
 		isDead = true;
 		playerRender.material.color = new Color (0.7f, 0.3f, 0.3f);
