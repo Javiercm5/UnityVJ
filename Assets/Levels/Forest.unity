@@ -33022,8 +33022,8 @@ MonoBehaviour:
   attackDelay: 2
   distFollowPlayer: 2
   attackClip: {fileID: 0}
-  walkClip: {fileID: 0}
-  hurtClip: {fileID: 0}
+  walkClip: {fileID: 8300000, guid: 867a5d07af4009f44bc3a3c625e3f149, type: 3}
+  hurtClip: {fileID: 8300000, guid: 1537651515a0f8f4a8fd6718d822f494, type: 3}
 --- !u!1 &1145487690
 GameObject:
   m_ObjectHideFlags: 0
