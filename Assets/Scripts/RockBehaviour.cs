@@ -18,7 +18,10 @@ public class RockBehaviour : MonoBehaviour {
 	void OnCollisionEnter(Collision hit)
 	{
 		if(!destroyed){
-			if(hit.gameObject.CompareTag("Floor")) gameObject.particleSystem.Play();
+			if(hit.gameObject.CompareTag("Floor")) {
+				gameObject.particleSystem.Play();
+				gameObject.GetComponent<AudioSource>().Play ();
+			}
 			if(hit.gameObject.CompareTag("Player")){
 				destroyed= true;
 				gameObject.particleSystem.gravityModifier = 0;

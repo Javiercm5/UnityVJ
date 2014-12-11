@@ -25,10 +25,6 @@ public class CannonShoot : MonoBehaviour {
 
 			bullet.velocity = transform.up * bulletSpeed;
 			Physics.IgnoreCollision (bullet.collider, gameObject.collider);
-
-			//Ignore collisions with player --> TODO: MOVE TO PROJECTILE
-			//GameObject player = GameObject.FindGameObjectWithTag("Player");
-			//Physics.IgnoreCollision (bullet.collider, player.collider);
 		}
 	}
 
