@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 20d2c512a96b7ee4a881e51d4754539a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - attackClip: {instanceID: 0}
+  - walkClip: {instanceID: 0}
+  - hurtClip: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
