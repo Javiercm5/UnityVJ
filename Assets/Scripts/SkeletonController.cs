@@ -20,7 +20,6 @@ public class SkeletonController : MonoBehaviour {
 	private int deadTimer = 100;
 	private int hurtTimer = 0;
 	private AudioSource enemySource, enemyWalkSource;
-	private bool isEnabled = true;
 	
 	
 	void Awake()
@@ -123,11 +122,6 @@ public class SkeletonController : MonoBehaviour {
 		enemySource.PlayOneShot(attackClip, 2.0f);
 		
 		
-	}
-
-	public void SetEnabled(bool enable)
-	{
-		isEnabled = enable;
 	}
 	
 	void OnTriggerEnter(Collider hit)
