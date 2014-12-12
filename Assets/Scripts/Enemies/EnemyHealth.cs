@@ -19,8 +19,7 @@ public class EnemyHealth : MonoBehaviour {
 	
 
 	void Update () {
-
-
+		// if(gameObject.name == "Demon") Debug.Log(health);
 	}
 
 

@@ -41,7 +41,7 @@ public class SkeletonController : MonoBehaviour {
 	
 	void Update()
 	{
-				if (isDead){
+		if (isDead){
 			if(deadTimer < 0) Destroy(gameObject);
 			else --deadTimer;
 		}

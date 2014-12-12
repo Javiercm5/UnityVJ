@@ -8,7 +8,8 @@ public class rockGenerator : MonoBehaviour
 	float count = 0.0f;
 	public float finCount = 0.6f;
 
-	public float force = 12.5f;
+	public float minForce = 10.5f;
+	public float maxForce = 13.5f;
 
 	void Start()
 	{}
@@ -21,7 +22,7 @@ public class rockGenerator : MonoBehaviour
 			count = 0.0f;
 
 			GameObject rockI = (GameObject)Instantiate(rock, transform.position, Random.rotation);
-			rockI.GetComponent<Rigidbody>().AddForce((new Vector3(Random.Range(-1.0f, 1.0f), 1.0f, Random.Range(-1.0f, 1.0f)))*force, ForceMode.Impulse);
+			rockI.GetComponent<Rigidbody>().AddForce((new Vector3(Random.Range(-1.0f, 1.0f), 1.0f, Random.Range(-1.0f, 1.0f)))*Random.Range(minForce, maxForce), ForceMode.Impulse);
 		}
 	}
 }

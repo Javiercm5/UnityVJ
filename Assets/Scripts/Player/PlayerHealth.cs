@@ -67,7 +67,7 @@ public class PlayerHealth : MonoBehaviour {
 
 	public void Heal(int amountHeal)
 	{
-		actualHealth = Mathf.Max(startHealth, actualHealth + amountHeal);
+		actualHealth = Mathf.Min(startHealth, actualHealth + amountHeal);
 		healParticles.Play();
 		playerSource.PlayOneShot(healSound, 5.0f);
 	}
@@ -77,9 +77,14 @@ public class PlayerHealth : MonoBehaviour {
 	{
 		isDead = true;
 		playerRender.material.color = new Color (0.7f, 0.3f, 0.3f);
-		gameObject.tag = "Untagged";
+		//gameObject.tag = "Untagged";
 		dieParticles.Play();
 		bonusSource.PlayOneShot(dieSound, 5.0f);
+	}
+
+	public bool hasFullHealth()
+	{
+		return actualHealth == startHealth;
 	}
 
 }

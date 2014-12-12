@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
 		inc = transform.position - pos;
 		cam.transform.position += inc;
 
-		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Mouse1))
 		{
 			speed = sprintSpeed;
 			jump = sprintJump;

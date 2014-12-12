@@ -1,28 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthKit : MonoBehaviour {
+public class HealthKit : MonoBehaviour
+{
 	public int healAmount = 10;
 
 	GameObject player;
-	PlayerController playerC;
-
-	// Use this for initialization
-	void Start () {
+	PlayerHealth playerH;
+	
+	void Start()
+	{
 		player = GameObject.FindGameObjectWithTag("Player");
+		playerH = player.GetComponent<PlayerHealth>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 
-	}
+	void Update()
+	{}
 
 	void OnTriggerEnter(Collider col)
 	{
-		if(col.gameObject == player)
+		if(col.gameObject == player && !playerH.hasFullHealth())
 		{
-			player.GetComponent<PlayerHealth>().Heal(healAmount);
+			playerH.Heal(healAmount);
 			Destroy(gameObject);
 		}
 	}
