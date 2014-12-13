@@ -17,7 +17,7 @@ public class demonController : MonoBehaviour
 	private bool isAttacking = false;
 	private EnemyHealth eh;
 	private bool isDead = false;
-	private int deadTimer = 100;
+	private int deadTimer = 200;
 	private int hurtTimer = 0;
 
 	float actualIT = 0.0f;
@@ -42,6 +42,9 @@ public class demonController : MonoBehaviour
 
 	public GameObject blockingI;
 
+	public AudioClip attackClip, walkClip, furyClip, deathClip;
+	AudioSource enemySource, enemyWalkSource;
+
 	void Start()
 	{
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -53,6 +56,13 @@ public class demonController : MonoBehaviour
 
 		invs = new GameObject[5];
 		invs[0] = inv0; invs[1] = inv1; invs[2] = inv2; invs[3] = inv3; invs[4] = inv4;
+
+		AudioSource[] sources  = GetComponents<AudioSource>();
+		enemySource = sources[0]; enemyWalkSource = sources[1];
+		
+		enemyWalkSource.clip = walkClip;
+		enemyWalkSource.loop = true;
+		enemyWalkSource.volume = 1.0f;
 	}
 
 	void Update()
@@ -69,7 +79,7 @@ public class demonController : MonoBehaviour
 			}
 		}
 
-		if(startBattle)
+		if(startBattle && !isDead)
 		{
 			count += Time.deltaTime;
 			if(count >= finCount)
@@ -81,27 +91,33 @@ public class demonController : MonoBehaviour
 				invocationI.GetComponent<DesertSpiderController>().throwPotion = true;
 				invocationI.GetComponent<NavMeshAgent>().baseOffset = -1.2f;
 
-				agent.Stop();
+				if(agent) agent.Stop();
 				anim.Play("Fury");
+
+				enemySource.PlayOneShot(furyClip, 2.0f);
 
 				invoking = true;
 			}
 		}
 
 		if (isDead){
-			if(deadTimer < 0) Destroy(gameObject);
+			if(deadTimer < 0)
+			{
+				agent = null;
+				Destroy(gameObject);
+			}
 			else --deadTimer;
 		}
 
 		else if(eh.dead()){
-			// enemyWalkSource.Stop();
+			enemyWalkSource.Stop();
 			
 			agent.enabled = false;
 			Die ();
 		}
 
 		else if(eh.isDamaged()){
-			// enemyWalkSource.Stop();
+			enemyWalkSource.Stop();
 			
 			if(hurtTimer == 0){
 				// enemySource.PlayOneShot(hurtClip, 2.0f);
@@ -123,7 +139,7 @@ public class demonController : MonoBehaviour
 			
 			if(playerInRange && timer >= attackDelay){
 				agent.Stop();
-				// enemyWalkSource.Stop();
+				enemyWalkSource.Stop();
 				Attack();
 			}
 			
@@ -140,7 +156,7 @@ public class demonController : MonoBehaviour
 					anim.Play ("Idle");
 				}
 				else if(distance <= distFollowPlayer && !isAttacking){ 
-					// if(!enemyWalkSource.isPlaying) enemyWalkSource.Play();
+					if(!enemyWalkSource.isPlaying) enemyWalkSource.Play();
 					agent.SetDestination(player.transform.position);
 					anim.Play("Walk");
 				}
@@ -157,7 +173,7 @@ public class demonController : MonoBehaviour
 		isDead = true;
 		invoking = false;
 		anim.Play ("Death");
-
+		enemySource.PlayOneShot(deathClip, 2.0f);
 		Destroy (blocking);
 	}
 
@@ -166,7 +182,7 @@ public class demonController : MonoBehaviour
 		timer = 0.0f;
 		isAttacking = true;
 		anim.Play ("Attack2");
-		// enemySource.PlayOneShot(attackClip, 2.0f);
+		enemySource.PlayOneShot(attackClip, 2.0f);
 		
 		
 	}
