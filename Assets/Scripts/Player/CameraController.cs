@@ -6,51 +6,41 @@ public class CameraController : MonoBehaviour
 	public float rotateSpeed = 125.0f;
 	public GameObject mainObject;
 
+	float initialDist;
+	float actualDist;
+
+	Vector3 vec;
+
 	void Start()
 	{
-		Screen.showCursor = false;
+		init();
 	}
 
 	void Update()
 	{
 		Screen.lockCursor = true;
-		gameObject.transform.RotateAround(mainObject.transform.position, Vector3.up, Input.GetAxis("Mouse X")*rotateSpeed*Time.deltaTime);
-		//gameObject.transform.RotateAround(mainObject.transform.position, -Vector3.right, Input.GetAxis("Mouse Y")*rotateSpeed*Time.deltaTime);
 
+		transform.RotateAround(mainObject.transform.position, Vector3.up, Input.GetAxis("Mouse X")*rotateSpeed*Time.deltaTime);
 
-		/*
-		//Debug.Log (Vector3.Distance (mainObject.transform.position, transform.position));
-
-		Debug.DrawRay(mainObject.transform.position, -mainObject.transform.position + transform.position, Color.green, 1.0f);
+		Vector3 centerMainObject = mainObject.transform.position + Vector3.up*0.125f;
+		vec = transform.position - (centerMainObject); vec = Vector3.Normalize(vec);
 
 		RaycastHit hit;
-		if(Physics.Raycast(mainObject.transform.position, -mainObject.transform.position + transform.position, out hit, Vector3.Distance(mainObject.transform.position, transform.position)))
-		{
-			float distanceToWall = hit.distance;
+		if(Physics.Raycast(centerMainObject, vec, out hit, initialDist, 1 << 8)) actualDist = hit.distance;
 
-			Vector3 ei = -(-mainObject.transform.position + transform.position)*distanceToWall;
+		transform.position = centerMainObject + vec*actualDist;
+	}
 
-			transform.position += ei;
+	public void init()
+	{
+		Screen.showCursor = false;
+		
+		initialDist = 1.0f;
+		actualDist = initialDist;
+		
+		vec = new Vector3(0.0f, 0.45f, -1.0f);
 
-			//Debug.DrawRay(hit.point, hit.normal, Color.green);
-			//Debug.DrawRay(hit.point, transform.forward, Color.green, 1.0f);
-
-			//transform.Translate(transform.forward*( - distanceToWall));
-
-			//transform.position = Vector3.Lerp(mainObject.transform.position, transform.position, distanceToWall/Vector3.Distance(mainObject.transform.position, gameObject.transform.position));
-
-			//transform.position -= dist;
-
-			//transform.position += 0.01f*transform.forward;
-			//transform.LookAt(mainObject.transform.position);
-
-			//transform.position = Vector3.Lerp(transform.position, -transform.forward, );
-			//transform.LookAt(mainObject.transform.position);
-
-			//Debug.Log(distanceToWall);
-
-			//Debug.Log (hit.collider.name);
-		}
-		*/
+		transform.position = mainObject.transform.position + vec*initialDist;
+		transform.rotation = Quaternion.Euler(Vector3.zero);
 	}
 }

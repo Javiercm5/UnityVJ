@@ -32679,6 +32679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1504004343}
+  camera: {fileID: 1451432223}
   zone0: {fileID: 1678762895}
   zone1: {fileID: 614193548}
   zone2: {fileID: 62228103}
@@ -44690,7 +44691,7 @@ GameObject:
   - 4: {fileID: 1250512356}
   - 114: {fileID: 1250512355}
   - 154: {fileID: 1250512354}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BaseTerrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52999,7 +53000,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: .00999999978
   far clip plane: 1000
   field of view: 60
   orthographic: 0
