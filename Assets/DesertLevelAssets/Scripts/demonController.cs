@@ -19,6 +19,7 @@ public class demonController : MonoBehaviour
 	private bool isDead = false;
 	private int deadTimer = 200;
 	private int hurtTimer = 0;
+	private int maxHurtTimer = 20;
 
 	float actualIT = 0.0f;
 	public float invokingTime = 3.0f;
@@ -32,14 +33,8 @@ public class demonController : MonoBehaviour
 	public float finCount = 10.0f;
 	public GameObject invocation;
 
-	public GameObject inv0;
-	public GameObject inv1;
-	public GameObject inv2;
-	public GameObject inv3;
-	public GameObject inv4;
-
-	GameObject[] invs;
-
+	public GameObject[] invs;
+	
 	public GameObject blockingI;
 
 	public AudioClip attackClip, walkClip, furyClip, deathClip;
@@ -53,9 +48,6 @@ public class demonController : MonoBehaviour
 
 		agent = GetComponent<NavMeshAgent>();
 		anim = GetComponent<Animation>();
-
-		invs = new GameObject[5];
-		invs[0] = inv0; invs[1] = inv1; invs[2] = inv2; invs[3] = inv3; invs[4] = inv4;
 
 		AudioSource[] sources  = GetComponents<AudioSource>();
 		enemySource = sources[0]; enemyWalkSource = sources[1];
@@ -86,7 +78,7 @@ public class demonController : MonoBehaviour
 			{
 				count = 0.0f;
 
-				Random r = new Random(); int i = Random.Range(0, 4);
+				Random r = new Random(); int i = Random.Range(0, invs.Length);
 				GameObject invocationI = (GameObject)Instantiate(invocation, invs[i].transform.position, invs[i].transform.rotation);
 				invocationI.GetComponent<DesertSpiderController>().throwPotion = true;
 				invocationI.GetComponent<NavMeshAgent>().baseOffset = -1.2f;
@@ -120,10 +112,9 @@ public class demonController : MonoBehaviour
 			enemyWalkSource.Stop();
 			
 			if(hurtTimer == 0){
-				// enemySource.PlayOneShot(hurtClip, 2.0f);
 				++hurtTimer;
 			}
-			else if(hurtTimer > 50){
+			else if(hurtTimer > maxHurtTimer){
 				hurtTimer = 0;
 				eh.setDamaged(false);
 			}
@@ -182,9 +173,7 @@ public class demonController : MonoBehaviour
 		timer = 0.0f;
 		isAttacking = true;
 		anim.Play ("Attack2");
-		enemySource.PlayOneShot(attackClip, 2.0f);
-		
-		
+		enemySource.PlayOneShot(attackClip, 2.0f);		
 	}
 
 	void OnTriggerEnter(Collider hit)

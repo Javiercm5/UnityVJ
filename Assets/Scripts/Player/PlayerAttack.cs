@@ -19,7 +19,7 @@ public class PlayerAttack : MonoBehaviour {
 		bool attack = GetComponentInParent<PlayerController>().attacking && attackDelay <= 0;
 		if(attack){
 			if(impact){
-				if(eh != null)eh.TakeDamage(damage);
+				if(eh) eh.TakeDamage(damage);
 			}
 			attackDelay = 50;
 			source.PlayOneShot(attackSound, 1.0f);
