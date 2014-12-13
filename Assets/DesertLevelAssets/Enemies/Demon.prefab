@@ -1796,11 +1796,11 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100022}
-  m_Material: {fileID: 13400000, guid: 4103788ce229ee94897553b68222a9f8, type: 2}
+  m_Material: {fileID: 13400000, guid: d9fc0e9cac4bd20418f51fc42cf96677, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .25, y: .5, z: .25}
+  m_Size: {x: .200000003, y: .5, z: .200000003}
   m_Center: {x: 0, y: .25, z: 0}
 --- !u!82 &8200000
 AudioSource:
@@ -1818,7 +1818,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1876,7 +1876,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 2
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1959,11 +1959,7 @@ MonoBehaviour:
   blocking: {fileID: 0}
   finCount: 10
   invocation: {fileID: 100076, guid: 2cc6b3e2fe1f4a84aa87a97462385d56, type: 2}
-  inv0: {fileID: 0}
-  inv1: {fileID: 0}
-  inv2: {fileID: 0}
-  inv3: {fileID: 0}
-  inv4: {fileID: 0}
+  invs: []
   blockingI: {fileID: 0}
   attackClip: {fileID: 8300000, guid: c48c9b4a846cf0542bc9200194031192, type: 3}
   walkClip: {fileID: 8300000, guid: 720672786ac898e46891ec0838145589, type: 3}

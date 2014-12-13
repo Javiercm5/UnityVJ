@@ -52,8 +52,6 @@ public class PlayerController : MonoBehaviour
 		bonusSource = sources[1];
 		walkSource = sources[2];
 		walkSource.loop = true;
-
-
 	
 	}
 	
