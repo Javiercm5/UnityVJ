@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 	public float rotateSpeed = 125.0f;
 	public GameObject mainObject;
 
-	float initialDist;
+	public float initialDist = 1.0f;
 	float actualDist;
 
 	Vector3 vec;
@@ -34,8 +34,7 @@ public class CameraController : MonoBehaviour
 	public void init()
 	{
 		Screen.showCursor = false;
-		
-		initialDist = 1.0f;
+
 		actualDist = initialDist;
 		
 		vec = new Vector3(0.0f, 0.45f, -1.0f);

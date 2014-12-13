@@ -53037,6 +53037,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotateSpeed: 125
   mainObject: {fileID: 1504004343}
+  initialDist: 1
 --- !u!81 &1451432227
 AudioListener:
   m_ObjectHideFlags: 0
