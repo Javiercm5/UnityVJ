@@ -6,6 +6,7 @@ public class MenuController : MonoBehaviour {
 
 	public GameObject chapterMenuPanel;
 	public GameObject menuPanel;
+	public GameObject creditsPanel;
 
 	void Start () {
 		chapterMenuPanel.SetActive(false);
@@ -32,8 +33,10 @@ public class MenuController : MonoBehaviour {
 
 	public void ShowChapterMenu()
 	{
-		chapterMenuPanel.SetActive(true);
 		menuPanel.SetActive(false);
+		chapterMenuPanel.SetActive(true);
+		creditsPanel.SetActive(false);
+
 
 		/*foreach(Button b in menuPanel.GetComponentsInChildren<Button>()){
 			b.interactable = false;
@@ -44,8 +47,10 @@ public class MenuController : MonoBehaviour {
 
 	public void ShowMainMenu()
 	{
-		chapterMenuPanel.SetActive(false);
 		menuPanel.SetActive(true);
+		chapterMenuPanel.SetActive(false);
+		creditsPanel.SetActive(false);
+
 		//chapterMenuPanel.GetComponent<Animator>().SetBool("mainMenuSelected", true);
 
 		/*foreach(Button b in menuPanel.GetComponentsInChildren<Button>()){
@@ -62,6 +67,9 @@ public class MenuController : MonoBehaviour {
 
 	public void ShowCredits()
 	{
+		menuPanel.SetActive(false);
+		chapterMenuPanel.SetActive(false);
+		creditsPanel.SetActive(true);
 
 	}
 }
