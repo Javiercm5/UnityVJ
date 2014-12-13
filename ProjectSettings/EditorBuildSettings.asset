@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Levels/Menu.unity
   - enabled: 1
-    path: Assets/Levels/Level01.unity
+    path: Assets/Levels/Forest.unity
+  - enabled: 1
+    path: Assets/Levels/Desert.unity
