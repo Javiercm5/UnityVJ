@@ -1986,9 +1986,9 @@ MonoBehaviour:
   attackDamage: 5
   attackDelay: 2
   distFollowPlayer: 4
-  attackClip: {fileID: 8300000, guid: 1c01e6f8fea449a45a73c023cf1910c3, type: 3}
-  walkClip: {fileID: 8300000, guid: 8d22fc4b91d6ca446945ac99fb3db0eb, type: 3}
-  hurtClip: {fileID: 8300000, guid: 5366b4f891e82034c950bbdb7a8fcb3f, type: 3}
+  attackClip: {fileID: 8300000, guid: b5cc14e281af55842b3dc38fa93f3b92, type: 3}
+  walkClip: {fileID: 8300000, guid: 92c59e7a9d8fd2b40884725ec5dbaace, type: 3}
+  hurtClip: {fileID: 8300000, guid: 003517c7b5e07cf46a9823b0a15491d4, type: 3}
   throwPotion: 0
   potion: {fileID: 100000, guid: 323fc210cd9d716499900ff12b221297, type: 2}
 --- !u!114 &11400002
