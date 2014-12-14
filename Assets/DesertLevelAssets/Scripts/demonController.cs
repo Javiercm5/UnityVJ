@@ -30,7 +30,7 @@ public class demonController : MonoBehaviour
 	public GameObject blocking;
 
 	float count = 0.0f;
-	public float finCount = 10.0f;
+	public float finCount = 12.0f;
 	public GameObject invocation;
 
 	public GameObject[] invs;

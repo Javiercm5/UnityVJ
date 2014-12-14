@@ -1818,7 +1818,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1876,7 +1876,7 @@ AudioSource:
   Mute: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 2
+  MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   distFollowPlayer: 15
   invokingTime: 3
   blocking: {fileID: 0}
-  finCount: 10
+  finCount: 12
   invocation: {fileID: 100076, guid: 2cc6b3e2fe1f4a84aa87a97462385d56, type: 2}
   invs: []
   blockingI: {fileID: 0}
