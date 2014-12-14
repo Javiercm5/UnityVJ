@@ -49,7 +49,11 @@ public class DesertSpiderController : MonoBehaviour {
 		if (isDead){
 			if(deadTimer < 0)
 			{
-				if(throwPotion) Instantiate(potion, transform.position, transform.rotation);
+				if(throwPotion)
+				{
+					GameObject potionI = (GameObject)Instantiate(potion, transform.position, transform.rotation);
+					potionI.transform.Translate(Vector3.up*0.25f);
+				}
 				Destroy(gameObject);
 			}
 			else --deadTimer;

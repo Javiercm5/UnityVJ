@@ -19,6 +19,7 @@ public class SkeletonController : MonoBehaviour {
 	private bool isDead = false;
 	private int deadTimer = 100;
 	private int hurtTimer = 0;
+	private int maxHurtTimer = 30;
 	private AudioSource enemySource, enemyWalkSource;
 	
 	
@@ -61,7 +62,7 @@ public class SkeletonController : MonoBehaviour {
 				enemySource.PlayOneShot(hurtClip, 2.0f);
 				++hurtTimer;
 			}
-			else if(hurtTimer > 50){
+			else if(hurtTimer > maxHurtTimer){
 				hurtTimer = 0;
 				eh.setDamaged(false);
 			}
