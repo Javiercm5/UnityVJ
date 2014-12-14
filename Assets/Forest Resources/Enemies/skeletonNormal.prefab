@@ -345,7 +345,6 @@ GameObject:
   - 4: {fileID: 400044}
   - 111: {fileID: 11100002}
   - 54: {fileID: 5400000}
-  - 65: {fileID: 6500000}
   - 135: {fileID: 13500000}
   - 195: {fileID: 19500000}
   - 114: {fileID: 11400000}
@@ -368,6 +367,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400046}
   - 137: {fileID: 13700000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: skeleton
   m_TagString: Untagged
@@ -1209,13 +1209,13 @@ BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100044}
-  m_Material: {fileID: 0}
+  m_GameObject: {fileID: 100046}
+  m_Material: {fileID: 13400000, guid: 4dff3fcb2ea756542a4f7f466e102a4f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .400000006, y: 1, z: .400000006}
-  m_Center: {x: 0, y: .5, z: 0}
+  m_Size: {x: .300000012, y: .300000012, z: 1}
+  m_Center: {x: 0, y: 0, z: .5}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1

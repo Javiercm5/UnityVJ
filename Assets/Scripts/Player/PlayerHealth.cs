@@ -15,6 +15,7 @@ public class PlayerHealth : MonoBehaviour {
 	public AudioClip dieSound;
 	public AudioClip healSound;
 
+	public GameObject gameManagement;
 
 	public bool isDead = false;
 	private bool damaged = false;
@@ -47,7 +48,7 @@ public class PlayerHealth : MonoBehaviour {
 
 		if (isDead) {
 			transform.localScale -= new Vector3(0.2f, 0.2f, 0.2f) * Time.deltaTime;
-			if(transform.localScale.x < 0.1) Application.LoadLevel(Application.loadedLevel);	
+			if(transform.localScale.x < 0.1) gameManagement.GetComponent<GameManagement>().LooseGame();//Application.LoadLevel(Application.loadedLevel);	
 			bloodParticles.Play();
 		}
 

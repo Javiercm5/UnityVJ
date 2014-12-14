@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class PlayerController : MonoBehaviour
 	public int maxJumpCount = 1;
 	public ParticleSystem jumpParticles;
 	public ParticleSystem powerUpParticles;
+	public Text keyText;
+	public Text jumpText;
 	int actualJumpCount = 0;
 
 	private Animator animPlayer;
@@ -52,7 +56,7 @@ public class PlayerController : MonoBehaviour
 		bonusSource = sources[1];
 		walkSource = sources[2];
 		walkSource.loop = true;
-	
+		if(maxJumpCount > 1) jumpText.color = Color.yellow;
 	}
 	
 	void Update()
@@ -98,6 +102,7 @@ public class PlayerController : MonoBehaviour
 	
 	public void incrementJumpCount(int inc = 1)
 	{
+		jumpText.color = Color.yellow;
 		maxJumpCount += inc;
 		powerUpParticles.Play();
 		bonusSource.PlayOneShot(powerSound, 5.0f);
@@ -163,6 +168,7 @@ public class PlayerController : MonoBehaviour
 
 	public void setKey()
 	{
+		keyText.color = Color.yellow;
 		key = true;
 	}
 

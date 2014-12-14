@@ -20,7 +20,6 @@ public class OpenDoor : MonoBehaviour {
 
 	void OnTriggerEnter(Collider hit)
 	{
-		Debug.Log ("entered");
 
 		if(hit.gameObject.tag == "Player" && !opened){
 

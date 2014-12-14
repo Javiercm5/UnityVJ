@@ -7,6 +7,7 @@ public class MenuController : MonoBehaviour {
 	public GameObject chapterMenuPanel;
 	public GameObject menuPanel;
 	public GameObject creditsPanel;
+	public GameObject controlsPanel;
 
 	void Start () {
 		chapterMenuPanel.SetActive(false);
@@ -36,6 +37,7 @@ public class MenuController : MonoBehaviour {
 		menuPanel.SetActive(false);
 		chapterMenuPanel.SetActive(true);
 		creditsPanel.SetActive(false);
+		controlsPanel.SetActive (false);
 
 
 		/*foreach(Button b in menuPanel.GetComponentsInChildren<Button>()){
@@ -45,11 +47,29 @@ public class MenuController : MonoBehaviour {
 
 	}
 
+	public void ShowControlsMenu()
+	{
+		menuPanel.SetActive(false);
+		chapterMenuPanel.SetActive(false);
+		creditsPanel.SetActive(false);
+		controlsPanel.SetActive (true);
+
+		
+		
+		/*foreach(Button b in menuPanel.GetComponentsInChildren<Button>()){
+			b.interactable = false;
+		}*/
+		//chapterMenu.GetComponent<Animator>().SetBool("chapterMenuSelected", false);
+		
+	}
+
 	public void ShowMainMenu()
 	{
 		menuPanel.SetActive(true);
 		chapterMenuPanel.SetActive(false);
 		creditsPanel.SetActive(false);
+		controlsPanel.SetActive (false);
+
 
 		//chapterMenuPanel.GetComponent<Animator>().SetBool("mainMenuSelected", true);
 
@@ -70,6 +90,8 @@ public class MenuController : MonoBehaviour {
 		menuPanel.SetActive(false);
 		chapterMenuPanel.SetActive(false);
 		creditsPanel.SetActive(true);
+		controlsPanel.SetActive (false);
+
 
 	}
 }

@@ -11,6 +11,8 @@ public class PlayerAttack : MonoBehaviour {
 	public AudioClip attackSound;
 	private AudioSource source;
 	private EnemyHealth eh;
+	private int enemiesKilled = 0;
+
 	void Awake () {
 		source = GetComponent<AudioSource>();
 	}
@@ -19,7 +21,10 @@ public class PlayerAttack : MonoBehaviour {
 		bool attack = GetComponentInParent<PlayerController>().attacking && attackDelay <= 0;
 		if(attack){
 			if(impact){
-				if(eh) eh.TakeDamage(damage);
+				if(eh){ 
+					eh.TakeDamage(damage);
+					if(eh.dead()) enemiesKilled++;
+				}
 			}
 			attackDelay = 50;
 			source.PlayOneShot(attackSound, 1.0f);
@@ -39,5 +44,9 @@ public class PlayerAttack : MonoBehaviour {
 		if(hit.gameObject.tag == "Enemy") impact = false;
 	}
 
+	public int GetEnemiesKilled()
+	{
+		return enemiesKilled;
+	}
 
 }
