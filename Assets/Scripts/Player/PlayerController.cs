@@ -28,10 +28,6 @@ public class PlayerController : MonoBehaviour
 	private Animator animPlayer;
 	public Camera cam;
 
-	Vector3 inc;
-	Vector3 pos;
-
-
 	public AudioClip runSound;
 	public AudioClip jumpSound;
 	public AudioClip powerSound;
@@ -49,8 +45,6 @@ public class PlayerController : MonoBehaviour
 
 		animPlayer = GetComponent<Animator>();
 
-		inc = Vector3.zero;
-		pos = transform.position;
 		AudioSource[] sources = GetComponents<AudioSource>();
 		playerSource = sources[0]; 
 		bonusSource = sources[1];
@@ -61,9 +55,6 @@ public class PlayerController : MonoBehaviour
 	
 	void Update()
 	{
-		inc = transform.position - pos;
-		cam.transform.position += inc;
-
 		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Mouse1))
 		{
 			speed = sprintSpeed;
@@ -77,8 +68,6 @@ public class PlayerController : MonoBehaviour
 
 
 		}
-
-		pos = transform.position;
 
 		if(canMove()) Move();
 		if(canJump()) Jump();

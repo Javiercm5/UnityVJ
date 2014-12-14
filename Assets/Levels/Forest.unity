@@ -3704,6 +3704,10 @@ Prefab:
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2000000, guid: 979311c30212fb94fb7517f406a8262c, type: 2}
+      propertyPath: near clip plane
+      value: .00999999978
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 979311c30212fb94fb7517f406a8262c, type: 2}
   m_RootGameObject: {fileID: 129771767}
@@ -7287,7 +7291,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: .00999999978
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -7659,7 +7663,6 @@ MonoBehaviour:
   runSound: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
   jumpSound: {fileID: 8300000, guid: 5a81f4428f0690040a51eb27e3901b99, type: 3}
   powerSound: {fileID: 8300000, guid: e51e8429b213e274a90fcf9f2cd79b7d, type: 3}
-  footSteps: {fileID: 8300000, guid: a5d5dd769f59d234c8100be245db9c85, type: 3}
   keySound: {fileID: 8300000, guid: df99e5db4d6b3914e826e30f0f5f12bd, type: 3}
 --- !u!95 &135421058
 Animator:
