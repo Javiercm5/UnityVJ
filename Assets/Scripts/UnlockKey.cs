@@ -22,6 +22,5 @@ public class UnlockKey : MonoBehaviour {
 	public void activate()
 	{
 		++nActivations;
-		Debug.Log(nActivations);
 	}
 }

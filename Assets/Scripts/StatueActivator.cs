@@ -22,7 +22,6 @@ public class StatueActivator : MonoBehaviour {
 			activated = true;
 			hit.gameObject.GetComponent<Rigidbody>().isKinematic = true;
 			toUnlock.GetComponent<UnlockKey>().activate();
-			Debug.Log ("ACtivated");
 			laserActive.SetActive(true);
 		}
 	}

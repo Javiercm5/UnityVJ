@@ -351,6 +351,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 82: {fileID: 8200002}
   - 82: {fileID: 8200000}
+  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: skeletonNormal
   m_TagString: Enemy
@@ -367,7 +368,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 400046}
   - 137: {fileID: 13700000}
-  - 65: {fileID: 6500000}
   m_Layer: 0
   m_Name: skeleton
   m_TagString: Untagged
@@ -922,7 +922,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100044}
   m_LocalRotation: {x: 0, y: -.965210259, z: 0, w: .261475176}
-  m_LocalPosition: {x: 38.1245537, y: 1.00714159, z: 5.49471807}
+  m_LocalPosition: {x: 13.8520002, y: 8.13799953, z: 38.1469994}
   m_LocalScale: {x: .5, y: .5, z: .5}
   m_Children:
   - {fileID: 400028}
@@ -1209,13 +1209,13 @@ BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100046}
-  m_Material: {fileID: 13400000, guid: 4dff3fcb2ea756542a4f7f466e102a4f, type: 2}
+  m_GameObject: {fileID: 100044}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .300000012, y: .300000012, z: 1}
-  m_Center: {x: 0, y: 0, z: .5}
+  m_Size: {x: .300000012, y: 1.29999995, z: .300000012}
+  m_Center: {x: 0, y: .600000024, z: 0}
 --- !u!82 &8200000
 AudioSource:
   m_ObjectHideFlags: 1
@@ -1378,7 +1378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016dfaf4ab0d0c64da4bedadc97a9619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 6
   bloodParticles: {fileID: 19800000}
 --- !u!114 &11400002
 MonoBehaviour:
@@ -1391,9 +1391,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95142fff8effbe64f8e71645e29b4dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 15
+  attackDamage: 7
   attackDelay: 2
-  distFollowPlayer: 2
+  distFollowPlayer: 15
   attackClip: {fileID: 0}
   walkClip: {fileID: 8300000, guid: 867a5d07af4009f44bc3a3c625e3f149, type: 3}
   hurtClip: {fileID: 8300000, guid: 1537651515a0f8f4a8fd6718d822f494, type: 3}
@@ -1488,7 +1488,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -.189999998
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!198 &19800000
