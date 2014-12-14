@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
 	public AudioClip runSound;
 	public AudioClip jumpSound;
 	public AudioClip powerSound;
-	public AudioClip footSteps;
+	public AudioClip keySound;
 
 	private bool key = false;
 
@@ -170,6 +170,7 @@ public class PlayerController : MonoBehaviour
 	{
 		keyText.color = Color.yellow;
 		key = true;
+		bonusSource.PlayOneShot(keySound, 1.0f);
 	}
 
 	public bool hasKey()

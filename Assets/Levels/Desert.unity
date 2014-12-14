@@ -42744,6 +42744,10 @@ Prefab:
       propertyPath: runSound
       value: 
       objectReference: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
+    - target: {fileID: 11400000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
+      propertyPath: keySound
+      value: 
+      objectReference: {fileID: 8300000, guid: df99e5db4d6b3914e826e30f0f5f12bd, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
   m_RootGameObject: {fileID: 1504004343}
@@ -55096,7 +55100,7 @@ MonoBehaviour:
   runSound: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
   jumpSound: {fileID: 8300000, guid: 5a81f4428f0690040a51eb27e3901b99, type: 3}
   powerSound: {fileID: 8300000, guid: e51e8429b213e274a90fcf9f2cd79b7d, type: 3}
-  footSteps: {fileID: 8300000, guid: a5d5dd769f59d234c8100be245db9c85, type: 3}
+  keySound: {fileID: 8300000, guid: df99e5db4d6b3914e826e30f0f5f12bd, type: 3}
 --- !u!95 &1504004350
 Animator:
   serializedVersion: 3
