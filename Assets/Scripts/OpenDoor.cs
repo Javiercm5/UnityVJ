@@ -8,9 +8,9 @@ public class OpenDoor : MonoBehaviour {
 
 	private bool opened = false;
 
+
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -27,6 +27,8 @@ public class OpenDoor : MonoBehaviour {
 				if(hit.gameObject.GetComponent<PlayerController>().hasKey()){
 					opened = true;
 					door.animation.Play("DoorAnimation");
+					door.audio.Play();
+
 				}
 			}
 

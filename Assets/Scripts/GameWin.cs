@@ -20,6 +20,7 @@ public class GameWin : MonoBehaviour {
 
 		if(hit.gameObject.tag == "Player"){
 			gameManagement.GetComponent<GameManagement>().WinGame();
+			audio.Play ();
 		}
 	}
 }

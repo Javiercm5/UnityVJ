@@ -3944,6 +3944,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 82810655}
   - 111: {fileID: 82810656}
+  - 82: {fileID: 82810657}
   m_Layer: 0
   m_Name: deadsDoor
   m_TagString: Untagged
@@ -3982,6 +3983,65 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!82 &82810657
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 317381447}
+  m_GameObject: {fileID: 82810654}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 15d85b297f29dbe4eab74f4cfb4264d1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &86174571
 GameObject:
   m_ObjectHideFlags: 0
@@ -7596,7 +7656,7 @@ MonoBehaviour:
   keyText: {fileID: 2093237520}
   jumpText: {fileID: 20013792}
   cam: {fileID: 129771768}
-  runSound: {fileID: 8300000, guid: 60cb982946baea14eabe3ef5f38059dd, type: 3}
+  runSound: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
   jumpSound: {fileID: 8300000, guid: 5a81f4428f0690040a51eb27e3901b99, type: 3}
   powerSound: {fileID: 8300000, guid: e51e8429b213e274a90fcf9f2cd79b7d, type: 3}
   footSteps: {fileID: 8300000, guid: a5d5dd769f59d234c8100be245db9c85, type: 3}
@@ -12083,6 +12143,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 269949913}
   - 111: {fileID: 269949914}
+  - 82: {fileID: 269949915}
   m_Layer: 0
   m_Name: deadsDoor
   m_TagString: Untagged
@@ -12121,6 +12182,65 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!82 &269949915
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 317518399}
+  m_GameObject: {fileID: 269949912}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 15d85b297f29dbe4eab74f4cfb4264d1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &274278926
 GameObject:
   m_ObjectHideFlags: 0
@@ -32924,6 +33044,7 @@ GameObject:
   - 33: {fileID: 879754733}
   - 65: {fileID: 879754732}
   - 114: {fileID: 879754731}
+  - 82: {fileID: 879754735}
   m_Layer: 0
   m_Name: GameWin
   m_TagString: Untagged
@@ -32975,6 +33096,64 @@ Transform:
   - {fileID: 1193785090}
   m_Father: {fileID: 416890825}
   m_RootOrder: 2
+--- !u!82 &879754735
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 879754730}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 27170c81beb7aa94488a09c89334d7d8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &880674830
 GameObject:
   m_ObjectHideFlags: 0
@@ -33042,7 +33221,6 @@ GameObject:
   - 33: {fileID: 883304718}
   - 23: {fileID: 883304717}
   - 111: {fileID: 883304716}
-  - 114: {fileID: 883304715}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigWater
   m_TagString: Untagged
@@ -33062,20 +33240,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 979702952}
   m_RootOrder: 2
---- !u!114 &883304715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 5be23960a2935414d97c5ad7b275da28,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 883304713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: .300000012
 --- !u!111 &883304716
 Animation:
   m_ObjectHideFlags: 0
@@ -37848,6 +38012,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1034784042}
   - 111: {fileID: 1034784043}
+  - 82: {fileID: 1034784044}
   m_Layer: 0
   m_Name: deadsDoor
   m_TagString: Untagged
@@ -37886,6 +38051,65 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!82 &1034784044
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 8200000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1127850472}
+  m_GameObject: {fileID: 1034784041}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 15d85b297f29dbe4eab74f4cfb4264d1, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1036731781
 GameObject:
   m_ObjectHideFlags: 0
@@ -41189,6 +41413,10 @@ Prefab:
     - target: {fileID: 11100000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e, type: 2}
       propertyPath: m_PlayAutomatically
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e, type: 2}
+      propertyPath: Priority
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a9d74399b26aace4dbcf4b6eae7b8f7e, type: 2}
@@ -45530,6 +45758,10 @@ Prefab:
       propertyPath: keyText
       value: 
       objectReference: {fileID: 2093237520}
+    - target: {fileID: 11400000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
+      propertyPath: runSound
+      value: 
+      objectReference: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
   m_RootGameObject: {fileID: 135421051}
@@ -50068,7 +50300,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a2128b2aa9fbd743882c26fb118a4a9, type: 2}
       propertyPath: m_RootOrder
-      value: 41
+      value: 39
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a2128b2aa9fbd743882c26fb118a4a9, type: 2}
       propertyPath: m_LocalScale.x
@@ -52056,7 +52288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 869032ec2af3de44ea014b6403f49d9b, type: 2}
       propertyPath: m_RootOrder
-      value: 43
+      value: 41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 869032ec2af3de44ea014b6403f49d9b, type: 2}
@@ -54415,7 +54647,6 @@ GameObject:
   - 33: {fileID: 1500842570}
   - 23: {fileID: 1500842569}
   - 111: {fileID: 1500842568}
-  - 114: {fileID: 1500842567}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigSpit
   m_TagString: Untagged
@@ -54435,20 +54666,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 979702952}
   m_RootOrder: 3
---- !u!114 &1500842567
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 5be23960a2935414d97c5ad7b275da28,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1500842565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: .349999994
 --- !u!111 &1500842568
 Animation:
   m_ObjectHideFlags: 0
@@ -55511,7 +55728,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: f68dab9e86f856446aa6b0faa2ba5a66, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .50999999
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -57198,7 +57415,6 @@ GameObject:
   - 33: {fileID: 1629374456}
   - 23: {fileID: 1629374455}
   - 111: {fileID: 1629374454}
-  - 114: {fileID: 1629374453}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigWater
   m_TagString: Untagged
@@ -57218,20 +57434,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 174822821}
   m_RootOrder: 2
---- !u!114 &1629374453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400002, guid: 5be23960a2935414d97c5ad7b275da28,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1629374451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: .300000012
 --- !u!111 &1629374454
 Animation:
   m_ObjectHideFlags: 0
@@ -62700,7 +62902,6 @@ GameObject:
   - 33: {fileID: 1756394972}
   - 23: {fileID: 1756394971}
   - 111: {fileID: 1756394970}
-  - 114: {fileID: 1756394969}
   m_Layer: 0
   m_Name: OBJ_WaterfallBigSpit
   m_TagString: Untagged
@@ -62720,20 +62921,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 174822821}
   m_RootOrder: 3
---- !u!114 &1756394969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 5be23960a2935414d97c5ad7b275da28,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1756394967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf652f76630e19438c4c1f02da3ebe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed_X: 0
-  scrollSpeed_Y: .349999994
 --- !u!111 &1756394970
 Animation:
   m_ObjectHideFlags: 0
@@ -66648,7 +66835,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a2128b2aa9fbd743882c26fb118a4a9, type: 2}
       propertyPath: m_RootOrder
-      value: 39
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a2128b2aa9fbd743882c26fb118a4a9, type: 2}
       propertyPath: m_LocalScale.x
@@ -73811,7 +73998,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bdff47564c80c4c4faaf9f6eacc8def0, type: 2}
       propertyPath: m_RootOrder
-      value: 44
+      value: 42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bdff47564c80c4c4faaf9f6eacc8def0, type: 2}
       propertyPath: m_LocalScale.x

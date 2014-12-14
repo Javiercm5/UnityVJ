@@ -25415,6 +25415,7 @@ GameObject:
   - 65: {fileID: 653871642}
   - 23: {fileID: 653871641}
   - 114: {fileID: 653871645}
+  - 82: {fileID: 653871646}
   m_Layer: 0
   m_Name: Win
   m_TagString: Untagged
@@ -25485,6 +25486,64 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManagement: {fileID: 878496747}
+--- !u!82 &653871646
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653871640}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 27170c81beb7aa94488a09c89334d7d8, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &654006939
 GameObject:
   m_ObjectHideFlags: 0
@@ -42673,6 +42732,10 @@ Prefab:
       propertyPath: gameManagement
       value: 
       objectReference: {fileID: 878496747}
+    - target: {fileID: 11400000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
+      propertyPath: runSound
+      value: 
+      objectReference: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf098d4895d1d43118549fd45f5f64bf, type: 2}
   m_RootGameObject: {fileID: 1504004343}
@@ -55022,7 +55085,7 @@ MonoBehaviour:
   keyText: {fileID: 1665868211}
   jumpText: {fileID: 1935796836}
   cam: {fileID: 1451432224}
-  runSound: {fileID: 8300000, guid: 60cb982946baea14eabe3ef5f38059dd, type: 3}
+  runSound: {fileID: 8300000, guid: de2a6e32aacd829488e6b1239f13a621, type: 3}
   jumpSound: {fileID: 8300000, guid: 5a81f4428f0690040a51eb27e3901b99, type: 3}
   powerSound: {fileID: 8300000, guid: e51e8429b213e274a90fcf9f2cd79b7d, type: 3}
   footSteps: {fileID: 8300000, guid: a5d5dd769f59d234c8100be245db9c85, type: 3}
